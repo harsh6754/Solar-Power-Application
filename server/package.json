@@ -15,6 +15,9 @@
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0"
+  },
   "description": ""
 }
