@@ -1,12 +1,12 @@
-const Admin = require('../models/admin');
-const errorHandler = require('../utils/ErrorsHandling');
-const bcryptjs = require('bcryptjs');
-const exportTOXLSX = require('../excel/exportToXLSX');
-const fs = require('fs');
-const updateModel = require('../Updation/dailyupdates');
+import Admin from '../models/admin.js';
+import ErrorsHandling from '../utils/ErrorsHandling.js';
+import bcryptjs from 'bcryptjs';
+import exportTOXLSX from '../excel/exportToXLSX.js';
+import fs from 'fs';
+import DailyUpdateSchema from '../Updation/dailyupdates.js';
 
 // Get all admins
-export const getAllAdmin = async (req, res, next) => {
+export const getAllAdmin = async(req, res, next) => {
     try {
         const admins = await Admin.find({});
         if (!admins || admins.length === 0) {
@@ -23,7 +23,7 @@ export const getAdmin = async (req, res, next) => {
     try {
         const admin = await Admin.findById(req.params.id);
         if (!admin) {
-            return next(errorHandler(404, 'Admin Not Found'));
+            return next(ErrorsHandling(404, 'Admin Not Found'));
         }
         const { password: pass, ...rest } = admin._doc; // Exclude password from response
         res.status(200).json(rest);
@@ -46,7 +46,7 @@ export const updateAdmin = async (req, res, next) => {
         );
 
         if (!updatedAdmin) {
-            return next(errorHandler(404, 'Admin Not Found'));
+            return next(ErrorsHandling(404, 'Admin Not Found'));
         }
 
         const { password, ...rest } = updatedAdmin._doc;
@@ -61,7 +61,7 @@ export const deleteAdmin = async (req, res, next) => {
     try {
         const admin = await Admin.findByIdAndDelete(req.params.id);
         if (!admin) {
-            return next(errorHandler(404, "Admin not found"));
+            return next(ErrorsHandling(404, "Admin not found"));
         }
         res.status(200).json('Admin has been deleted successfully');
     } catch (error) {
@@ -124,3 +124,5 @@ export const getallDailyPost = async (req, res, next) => {
         next(err);
     }
 };
+
+

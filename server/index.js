@@ -1,8 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const connectDB = require('./DB/db');
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import adminRouter from './routes/admin.js'
+import connectDB from './DB/db.js';
 
-require('dotenv').config();
+dotenv.config();
 
 const app = express();
 
@@ -21,3 +23,5 @@ app.get('/',(req,res) =>{
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
+
+app.use('/admin',adminRouter);
