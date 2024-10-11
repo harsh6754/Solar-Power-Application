@@ -3,13 +3,12 @@ import ErrorsHandling from "../utils/ErrorsHandling";
 import bcryptjs from 'bcryptjs';
 
 
-
 export const getAllUser = async (req, res, next) => {
     try {
       const users = await User.find({});
   
       if (!users || users.length === 0) {
-        return next(errorHandler(404, "Users not found!"));
+        return next(ErrorsHandling(404, "Users not found!"));
       }
   
       res.status(200).json(users);
@@ -22,7 +21,7 @@ export const getAllUser = async (req, res, next) => {
     try {
       const user = await User.findById(req.params.id);
   
-      if (!user) return next(errorHandler(404, "User not found!"));
+      if (!user) return next(ErrorsHandling(404, "User not found!"));
   
       const { password: pass, ...rest } = user._doc;
   

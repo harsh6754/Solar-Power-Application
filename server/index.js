@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import adminRouter from './routes/admin.js'
 import connectDB from './DB/db.js';
+import userRouter from './routes/user.js';
 
 dotenv.config();
 
@@ -25,3 +26,4 @@ app.listen(PORT, () => {
   });
 
 app.use('/admin',adminRouter);
+app.use('/user',userRouter);
