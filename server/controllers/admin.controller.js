@@ -1,4 +1,4 @@
-import Admin from '../models/admin.js';
+import Admin from '../models/admin.model.js';
 import ErrorsHandling from '../utils/ErrorsHandling.js';
 import bcryptjs from 'bcryptjs';
 import exportTOXLSX from '../excel/exportToXLSX.js';

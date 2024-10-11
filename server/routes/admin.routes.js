@@ -7,7 +7,7 @@ import {
     createDailyPost,
     getDailyPost,
     getallDailyPost
-} from '../controllers/admin.js'; // Use .js extension with ES modules
+} from '../controllers/admin.controller.js'; // Use .js extension with ES modules
 
 import express from 'express';
 

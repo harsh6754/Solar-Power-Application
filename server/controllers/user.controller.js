@@ -1,7 +1,6 @@
-import User from "../models/user";
-import ErrorsHandling from "../utils/ErrorsHandling";
+import User from "../models/user.model.js";
+import ErrorsHandling from "../utils/ErrorsHandling.js";
 import bcryptjs from 'bcryptjs';
-
 
 export const getAllUser = async (req, res, next) => {
     try {
