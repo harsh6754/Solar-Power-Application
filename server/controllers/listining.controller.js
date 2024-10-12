@@ -1,5 +1,4 @@
-import ListingData from "../models/listining.model";
-
+import listingData from "../models/listining.model.js";
 
 export const createList = async (req, res, next) => {
     try {
@@ -71,7 +70,7 @@ export const createList = async (req, res, next) => {
   export const getAllListings = async (req, res, next) => {
     try {
       // Fetch all listings from the database
-      const listings = await ListingData.find();
+      const listings = await listingData.find();
       // Send the listings as a response
       res.status(200).json(listings);
     } catch (error) {
@@ -79,11 +78,11 @@ export const createList = async (req, res, next) => {
       next(error);
     }
   };
-  
+
   export const getOneList = async (req, res, next) => {
     try {
       const { email } = req.params;
-      const listing = await ListingData.findOne({ email: email });
+      const listing = await listingData.findOne({ email: email });
       if (!listing) {
         return next(errorHandler(404, "Listing not found"));
       }
@@ -98,7 +97,7 @@ export const createList = async (req, res, next) => {
       const { id } = req.params;
       const update = req.body;
       const options = { new: true };
-      const updatedListing = await ListingData.findByIdAndUpdate(
+      const updatedListing = await listingData.findByIdAndUpdate(
         id,
         update,
         options
@@ -116,7 +115,7 @@ export const createList = async (req, res, next) => {
     try {
       const { id } = req.params;
       // Find the listing by its ID and delete it
-      const deletedListing = await ListingData.findByIdAndDelete(id);
+      const deletedListing = await listingData.findByIdAndDelete(id);
       if (!deletedListing) {
         return next(errorHandler(404, "Listing not found"));
       }

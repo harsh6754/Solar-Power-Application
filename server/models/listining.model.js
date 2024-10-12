@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+
 const ListingDataSchema = new mongoose.Schema({
     plantCapacity: {
         type: Number,
@@ -100,5 +101,5 @@ const ListingDataSchema = new mongoose.Schema({
     { timestamps: true }
 )
 
-const ListingData = mongoose.model("ListingData",ListingDataSchema);
-export default ListingData;
+const listingData = mongoose.model.listingData || mongoose.model('listingData',ListingDataSchema);
+export default listingData;

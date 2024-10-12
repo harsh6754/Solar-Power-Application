@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import adminRouter from './routes/admin.routes.js'
 import connectDB from './DB/db.js';
 import userRouter from './routes/user.routes.js';
-import authRouter from './routes/auth.routes.js'
+import authRouter from './routes/auth.routes.js';
+import listingRouter from './routes/listing.route.js';
 
 dotenv.config();
 
@@ -29,3 +30,4 @@ app.listen(PORT, () => {
 app.use('/admin',adminRouter);
 app.use('/user',userRouter);
 app.use("/auth", authRouter);
+app.use("/listing",listingRouter);
