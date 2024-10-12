@@ -2,6 +2,18 @@
 
 import mongoose from 'mongoose';
 
+// Function to check if a password is strong
+const isStrongPassword = (password) => {
+    const minLength = password.length >= 8;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    return minLength && hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChars;
+};
+
+
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -26,7 +38,12 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, "Password is required"],
-        minlength: [6, "Password must be at least 6 characters long"],
+        validate: {
+            validator: function (password) {
+                return isStrongPassword(password);
+            },
+            message: props => `Password should be at least 8 characters long, contain uppercase, lowercase, numbers, and special characters!`,
+        },
     },
     plantname: {
         type: String,

@@ -2,6 +2,7 @@
 
 import mongoose from 'mongoose';
 
+
 const ListingDataSchema = new mongoose.Schema({
     plantCapacity: {
         type: Number,
