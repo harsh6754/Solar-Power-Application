@@ -1,3 +1,5 @@
+//JWT Access
+
 import jwt from 'jsonwentoken';
 import ErrorsHandling from './ErrorsHandling';
 
