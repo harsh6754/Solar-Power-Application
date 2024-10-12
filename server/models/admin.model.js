@@ -1,3 +1,5 @@
+//Admin models
+
 import mongoose from 'mongoose';
 
 // Correctly define the admin schema using mongoose.Schema
