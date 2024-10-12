@@ -1,3 +1,5 @@
+//Error Handling
+
 class ErrorsHandling {
     constructor(statusCode, message) {
         this.error = new Error(message);
