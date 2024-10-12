@@ -1,3 +1,5 @@
+//User Authetication Panel 
+
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Admin from "../models/admin.model.js";
