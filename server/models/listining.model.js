@@ -1,3 +1,5 @@
+//Listing Models
+
 import mongoose from 'mongoose';
 
 const ListingDataSchema = new mongoose.Schema({
