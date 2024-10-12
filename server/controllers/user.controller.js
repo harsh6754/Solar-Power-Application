@@ -1,3 +1,5 @@
+//User Controller Panel
+
 import User from "../models/user.model.js";
 import ErrorsHandling from "../utils/ErrorsHandling.js";
 import bcryptjs from 'bcryptjs';
