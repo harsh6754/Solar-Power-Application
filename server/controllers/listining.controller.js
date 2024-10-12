@@ -1,3 +1,5 @@
+//User Data Listinig Pannel 
+
 import listingData from "../models/listining.model.js";
 
 export const createList = async (req, res, next) => {
