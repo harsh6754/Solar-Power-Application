@@ -1,3 +1,5 @@
+//Admin Controller Panel
+
 import Admin from '../models/admin.model.js';
 import ErrorsHandling from '../utils/ErrorsHandling.js';
 import bcryptjs from 'bcryptjs';
