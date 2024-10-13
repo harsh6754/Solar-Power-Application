@@ -1,7 +1,7 @@
 {
   "name": "solar-power",
   "version": "1.0.0",
-  "description": "",
+  "description": "Solar-Power-Application For Client",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
