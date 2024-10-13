@@ -1,8 +1,14 @@
 import React from 'react';
+import {Routes,Route} from 'react-router-dom';
+import Homepage from './component/homepage';
+import './index.css';
+
 function App() {
   return (
-    <div className="App">
-       Harsh
+    <div>
+       <Routes>
+           <Route path="/" element={<Homepage/>}/>
+       </Routes>
     </div>
   );
 }
