@@ -1,8 +1,12 @@
 # Security Policy
 
+This Solar-Power Application is the intellectual property of the client. Unauthorized copying, reproduction, or distribution of the application's code, design, or any related materials without explicit permission from the client may result in legal action. The client reserves the right to take necessary action against any individual or organization found infringing on the intellectual property rights of this project.
+
+All contributions to this project must adhere to the terms of use and licensing agreements provided. Any misuse or violation of these terms may result in the revocation of access and potential legal consequences.
+
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
+Use this section to tell about which versions of your project are
 currently being supported with security updates.
 
 | Version | Supported          |
@@ -12,10 +16,6 @@ currently being supported with security updates.
 | 4.0.x   | :white_check_mark: |
 | < 4.0   | :x:                |
 
-## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+
