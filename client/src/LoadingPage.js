@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../src/Images/Solar.png';
-import Solar from '../src/Images/solar2.jpg';
+import panel1 from '../src/Images/panel1.jpg'; // Example images
+import panel2 from '../src/Images/panel2.jpg'; 
+import panel3 from '../src/Images/panel3.jpg'; 
 
 const LoadingPage = () => {
   const [progress, setProgress] = useState(0);
+  const [backgroundImage, setBackgroundImage] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Move the background images array inside useEffect
+    const backgroundImages = [panel1, panel2, panel3]; // Add as many as needed
+
+    // Select a random background image
+    const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+    setBackgroundImage(randomImage);
+
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
         if (prevProgress >= 100) {
@@ -25,7 +35,7 @@ const LoadingPage = () => {
   return (
     <div
       className="h-screen w-full bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center"
-      style={{ backgroundImage: `url(${Solar})` }} // Correct way to set background image
+      style={{ backgroundImage: `url(${backgroundImage})` }} // Set random background image
     >
       {/* Parul University and NAAC Logo */}
       <div className="absolute top-3 left-4 flex items-center">
