@@ -9,7 +9,7 @@ const Homepage = () => {
         <Header />
       </div>
       <div>
-
+      Body
       </div>
       <div className='flex flex-col min-h-screen'>
         <Footer />
