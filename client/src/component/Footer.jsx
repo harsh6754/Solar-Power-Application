@@ -88,13 +88,13 @@ const Footer = () => {
                 <a href="/about" className="hover:underline">About</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">Careers</a>
+                <a href="" className="hover:underline">Careers</a>
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">Brand Center</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">Blog</a>
+                <a href="/blogs" className="hover:underline">Blog</a>
               </li>
             </ul>
           </div>

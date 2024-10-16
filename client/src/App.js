@@ -4,14 +4,21 @@ import Homepage from './pages/Homepages';
 import './index.css';
 import LoadingPage from './LoadingPage';
 import About from './FooterPages/About';
+import Blogs from './FooterPages/Blogs';
 
 function App() {
   return (
     <div>
        <Routes>
+           {/* Pages Routing */}
            <Route path="/" element={<LoadingPage/>}/>
            <Route path="/main" element={<Homepage/>}/>
+
+
+
+           {/* Footer Page Routing */}
            <Route path="/about" element={<About/>}/>
+           <Route path='/blogs' element={<Blogs/>}/>
        </Routes>
     </div>
   );
