@@ -5,6 +5,7 @@ import './index.css';
 import LoadingPage from './LoadingPage';
 import About from './FooterPages/About';
 import Blogs from './FooterPages/Blogs';
+import BrandCenter from './FooterPages/BrandCenter';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
            {/* Footer Page Routing */}
            <Route path="/about" element={<About/>}/>
            <Route path='/blogs' element={<Blogs/>}/>
+           <Route path='/Brand' element={<BrandCenter/>}/>
        </Routes>
     </div>
   );
