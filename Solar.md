@@ -26,6 +26,7 @@ The Solar Power Web Application is a client project developed for managing solar
 - Admins can view user feedback and monitor monthly sales.
 - Admins can analyze traffic data to identify the most popular areas for solar plate sales.
 - Admins can upload blogs and update content on the About page as necessary.
+- Admins can add product and delete product.
 
 ## Technologies Used
 - [List the technologies, frameworks, and libraries used in your project, e.g., React, Node.js, Express, MongoDB, etc.]
