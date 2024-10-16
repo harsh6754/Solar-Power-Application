@@ -10,6 +10,7 @@ import Blogs from './FooterPages/Blogs';
 import BrandCenter from './FooterPages/BrandCenter';
 import Careers from './FooterPages/Careers';
 import Contact from './FooterPages/Contact';
+import Licensing from './FooterPages/Licensing';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
            <Route path='/Brand' element={<BrandCenter/>}/>
            <Route path='/career' element={<Careers/>}/>
            <Route path='/contact' element={<Contact/>}/>
+           <Route path='/licences' element={<Licensing/>}/>
+
        </Routes>
     </div>
   );
