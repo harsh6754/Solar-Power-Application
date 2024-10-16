@@ -111,7 +111,7 @@ const Footer = () => {
                 <a href="#" className="hover:underline">Facebook</a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">Contact Us</a>
+                <a href="/contact" className="hover:underline">Contact Us</a>
               </li>
             </ul>
           </div>
