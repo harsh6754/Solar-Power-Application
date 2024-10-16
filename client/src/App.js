@@ -6,6 +6,7 @@ import LoadingPage from './LoadingPage';
 import About from './FooterPages/About';
 import Blogs from './FooterPages/Blogs';
 import BrandCenter from './FooterPages/BrandCenter';
+import Careers from './FooterPages/Careers';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
            <Route path="/about" element={<About/>}/>
            <Route path='/blogs' element={<Blogs/>}/>
            <Route path='/Brand' element={<BrandCenter/>}/>
+           <Route path='/career' element={<Careers/>}/>
        </Routes>
     </div>
   );
