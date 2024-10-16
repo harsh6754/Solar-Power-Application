@@ -11,6 +11,7 @@ import BrandCenter from './FooterPages/BrandCenter';
 import Careers from './FooterPages/Careers';
 import Contact from './FooterPages/Contact';
 import Licensing from './FooterPages/Licensing';
+import PrivacyPolicy from './FooterPages/PrivacyPolicy';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
            <Route path='/career' element={<Careers/>}/>
            <Route path='/contact' element={<Contact/>}/>
            <Route path='/licences' element={<Licensing/>}/>
+           <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
 
        </Routes>
     </div>
