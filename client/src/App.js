@@ -16,6 +16,8 @@ import Terms from './FooterPages/Terms';
 
 import FeedbackForm from './HaderPages/FeedbackForm';
 import Team from './HaderPages/Team';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -25,7 +27,8 @@ function App() {
            {/* Pages Routing */}
            <Route path="/" element={<LoadingPage/>}/>
            <Route path="/main" element={<Homepage/>}/>
-
+           <Route path='/login' element={<Login/>}/>
+           <Route path ='/profile' element={<Profile/>}/>
 
 
            {/* Footer Page Routing */}
