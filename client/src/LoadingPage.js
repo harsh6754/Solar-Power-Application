@@ -44,7 +44,7 @@ const LoadingPage = () => {
         }
         return prevProgress + 5; // Increase the progress by 5%
       });
-    }, 200); // Simulate progress every 100ms
+    }, 100); // Simulate progress every 100ms
 
     return () => clearInterval(interval);
   }, [navigate]);
