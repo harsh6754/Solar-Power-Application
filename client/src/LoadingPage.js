@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+
 import Logo from '../src/Images/Solar.png';
 import panel1 from '../src/Images/panel1.jpg'; // Example images
 import panel2 from '../src/Images/panel2.jpg'; 
 import panel3 from '../src/Images/panel3.jpg'; 
+
 
 const LoadingPage = () => {
   const [progress, setProgress] = useState(0);
