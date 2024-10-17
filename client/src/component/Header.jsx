@@ -1,12 +1,13 @@
 import { Disclosure, Menu } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'; // Import useState
 import Logo from '../Images/Solar.png'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'About', href: '/about' },
+  { name: 'Dashboard', href: '#' },
+  { name: 'Team', href: '/team' },
+  { name: 'Feedback', href: '/feedback' },
 ]
 
 function classNames(...classes) {
@@ -14,6 +15,12 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const [current, setCurrent] = useState(navigation[0].name); // Initialize state with the first navigation item
+
+  const handleLinkClick = (name) => {
+    setCurrent(name); // Update current state when a link is clicked
+  }
+
   return (
     <Disclosure as="nav" className="bg-gray-800 z-0">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -34,9 +41,10 @@ export default function Example() {
                 <a
                   key={item.name}
                   href={item.href}
-                  aria-current={item.current ? 'page' : undefined}
+                  onClick={() => handleLinkClick(item.name)} // Set current on click
+                  aria-current={item.name === current ? 'page' : undefined} // Check if the current item matches
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.name === current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'rounded-md px-3 py-2 text-sm font-medium'
                   )}
                 >
@@ -48,9 +56,6 @@ export default function Example() {
 
           {/* Profile dropdown on the right */}
           <div className="flex items-center justify-end">
-            
-
-            {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
                 <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -107,9 +112,10 @@ export default function Example() {
               key={item.name}
               as="a"
               href={item.href}
-              aria-current={item.current ? 'page' : undefined}
+              onClick={() => handleLinkClick(item.name)} // Set current on click
+              aria-current={item.name === current ? 'page' : undefined} // Check if the current item matches
               className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                item.name === current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium'
               )}
             >

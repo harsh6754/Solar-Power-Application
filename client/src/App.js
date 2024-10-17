@@ -14,6 +14,9 @@ import Licensing from './FooterPages/Licensing';
 import PrivacyPolicy from './FooterPages/PrivacyPolicy';
 import Terms from './FooterPages/Terms';
 
+import FeedbackForm from './HaderPages/FeedbackForm';
+import Team from './HaderPages/Team';
+
 function App() {
   return (
     <div>
@@ -34,6 +37,10 @@ function App() {
            <Route path='/licences' element={<Licensing/>}/>
            <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
            <Route path ='/Terms-And-Condition' element={<Terms/>}/>
+
+           {/* Header Page Routing */}
+           <Route path='/feedback' element={<FeedbackForm/>}/>
+           <Route path='/team' element={<Team/>}/>
 
        </Routes>
     </div>
