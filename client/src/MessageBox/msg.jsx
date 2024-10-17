@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FaRobot } from "react-icons/fa"; // Import a robot icon from React Icons (optional)
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -66,10 +67,12 @@ const Chatbot = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer YOUR_OPENAI_API_KEY`, // Replace with your OpenAI API key
+            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, // Use environment variable for API key
           },
         }
       );
+
+
 
       return res.data.choices[0].text.trim();
     } catch (error) {
@@ -86,7 +89,7 @@ const Chatbot = () => {
         className="fixed bottom-4 right-4 p-3 bg-blue-500 text-white rounded-full shadow-lg z-50"
         aria-label="Chat with us"
       >
-        🤖 {/* Replace with a robot icon from a library if desired */}
+        <FaRobot size={24} /> {/* Robot icon from React Icons */}
       </button>
 
       {/* Chatbot container */}
@@ -102,15 +105,11 @@ const Chatbot = () => {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`my-2 ${
-                  message.sender === "user" ? "text-right" : "text-left"
-                }`}
+                className={`my-2 ${message.sender === "user" ? "text-right" : "text-left"}`}
               >
                 <p
                   className={`inline-block p-2 rounded-lg ${
-                    message.sender === "user"
-                      ? "bg-blue-400 text-white"
-                      : "bg-gray-300 text-black"
+                    message.sender === "user" ? "bg-blue-400 text-white" : "bg-gray-300 text-black"
                   }`}
                 >
                   {message.text}
