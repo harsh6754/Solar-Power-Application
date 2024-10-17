@@ -2,12 +2,12 @@ import {initializeApp} from 'firebase/app';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-    apiKey:process.env.API_KEY,
-    authDomain:process.env.AUTH_DOMAIN,
-    projectId:process.env.PROJECT_ID,
-    storageBucket:process.env.STORAGE_BUCKET,
-    messaingSenderId:process.env.MESSAGING_SENDER_ID,
-    appId:process.env.APP_ID,
+    apiKey:'AIzaSyBoexcVLsachVTptDB_36BdzcnFEq4WaAI',
+    authDomain:'t-music-be993.firebaseapp.com',
+    projectId:'t-music-be993',
+    storageBucket:'t-music-be993.appspot.com',
+    messaingSenderId:'650972389603',
+    appId:'1:650972389603:web:db9a114d4dbf0f1053a5d6',
 };
 
 const app = initializeApp(firebaseConfig);

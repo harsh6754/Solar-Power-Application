@@ -1,25 +1,39 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getDownloadURL, ref } from 'firebase/storage';
+import { storage } from './utils/firebaseConfig'; // Assuming Firebase is configured correctly
 
-
-import Logo from '../src/Images/Solar.png';
-import panel1 from '../src/Images/panel1.jpg'; // Example images
-import panel2 from '../src/Images/panel2.jpg'; 
-import panel3 from '../src/Images/panel3.jpg'; 
-
+import Logo from '../src/Images/Solar.png'; // Logo image
 
 const LoadingPage = () => {
   const [progress, setProgress] = useState(0);
   const [backgroundImage, setBackgroundImage] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Move the background images array inside useEffect
-    const backgroundImages = [panel1, panel2, panel3]; // Add as many as needed
+  // Fetch a random image URL from Firebase Storage
+  const fetchRandomImageUrl = async () => {
+    const imageFiles = ['gs://t-music-be993.appspot.com/Solar/panel1.jpg', 'gs://t-music-be993.appspot.com/Solar/panel2.jpg', 'gs://t-music-be993.appspot.com/Solar/panel3.jpg']; // Update paths according to your Firebase Storage structure
+    const randomFile = imageFiles[Math.floor(Math.random() * imageFiles.length)];
 
-    // Select a random background image
-    const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
-    setBackgroundImage(randomImage);
+    try {
+      const fileRef = ref(storage, randomFile); // Create a reference to the image file
+      const url = await getDownloadURL(fileRef); // Get the download URL
+      return url;
+    } catch (error) {
+      console.error('Error fetching random image URL:', error.message);
+    }
+  };
+
+  useEffect(() => {
+    const setRandomBackgroundImage = async () => {
+      const imageUrl = await fetchRandomImageUrl(); // Fetch random image URL
+      if (imageUrl) {
+        setBackgroundImage(imageUrl); // Set the fetched URL as the background image
+      }
+    };
+
+    setRandomBackgroundImage();
 
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
@@ -30,7 +44,7 @@ const LoadingPage = () => {
         }
         return prevProgress + 5; // Increase the progress by 5%
       });
-    },100); // Simulate progress every 100ms
+    }, 200); // Simulate progress every 100ms
 
     return () => clearInterval(interval);
   }, [navigate]);
@@ -38,7 +52,7 @@ const LoadingPage = () => {
   return (
     <div
       className="h-screen w-full bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }} // Set random background image
+      style={{ backgroundImage: `url(${backgroundImage})` }} // Set dynamic background image
     >
       {/* Parul University and NAAC Logo */}
       <div className="absolute top-3 left-4 flex items-center">
