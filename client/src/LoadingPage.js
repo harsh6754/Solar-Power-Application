@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getDownloadURL, ref } from 'firebase/storage';
@@ -6,7 +5,7 @@ import { storage } from './utils/firebaseConfig'; // Assuming Firebase is config
 
 import Logo from '../src/Images/Solar.png'; // Logo image
 
-const LoadingPage = () => {
+const LoadingPage = ({hideHeaderFooter}) => {
   const [progress, setProgress] = useState(0);
   const [backgroundImage, setBackgroundImage] = useState('');
   const navigate = useNavigate();
