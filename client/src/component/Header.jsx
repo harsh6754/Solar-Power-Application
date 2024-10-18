@@ -1,5 +1,4 @@
 import { Disclosure, Menu } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'; // Import useState
 import Logo from '../Images/Solar.png'
 
@@ -26,12 +25,16 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo aligned to the left */}
-          <div className="flex-shrink-0">
+          <div 
+          className=" flex justify-start items-center flex-shrink-0 cursor-pointer">
             <img
               alt="Your Company"
               src={Logo}
               className="h-20 w-auto"
             />
+            <span className="ml-0 text-2xl font-semibold text-white">
+              Solar-Power
+            </span>
           </div>
 
           {/* Centered navigation links */}
@@ -100,6 +103,8 @@ export default function Example() {
                 </Menu.Item>
               </Menu.Items>
             </Menu>
+          </div>
+          <div>
           </div>
         </div>
       </div>
