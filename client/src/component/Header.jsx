@@ -2,7 +2,6 @@ import { Disclosure, Menu } from '@headlessui/react'
 import { useState } from 'react'; // Import useState
 import Logo from '../Images/Solar.png'
 
-
 const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Dashboard', href: '#' },
@@ -37,6 +36,7 @@ export default function Header() {
               Solar-Power
             </span>
           </div>
+
 
           {/* Centered navigation links */}
           <div className="hidden sm:ml-6 sm:block flex-1">

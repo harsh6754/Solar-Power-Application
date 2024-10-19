@@ -1,12 +1,13 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaGlobe } from 'react-icons/fa'; // Import a globe icon from react-icons
 
-const languages =[
-    {code :"en" , lang: "English"},
-    {code :"hi" , lang: "Hindi"},
-    {code :"guj" , lang: "Gujarati"},
-    {code :"mrt" , lang: "Marathi"},
-    {code :"raj" , lang: "Rajasthani"},
+const languages = [
+    { code: "en", lang: "English" },
+    { code: "hi", lang: "Hindi" },
+    { code: "guj", lang: "Gujarati" },
+    { code: "mrt", lang: "Marathi" },
+    { code: "raj", lang: "Rajasthani" },
 ];
 
 const Languageselector = () => {
@@ -24,14 +25,16 @@ const Languageselector = () => {
 
     return (
         <div className="relative">
+            {/* Language selector button with an icon */}
             <button 
                 onClick={toggleMenu} 
-                className="text-xl font-medium px-4 py-0 border rounded-lg"
+                className="flex items-center text-xl font-medium px-4 py-0 border rounded-lg"
             >
+                <FaGlobe className="mr-2" /> {/* Globe icon */}
                 {i18n.language.toUpperCase()} &#9662; {/* Down arrow symbol */}
             </button>
             {isMenuOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-lg">
+                <div className="absolute bottom-full left-3 mb-2 w-40 bg-white border rounded-lg shadow-lg">
                     {languages.map((lng) => (
                         <button
                             key={lng.code}

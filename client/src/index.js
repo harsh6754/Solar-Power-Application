@@ -6,6 +6,7 @@ import Chatbot from './MessageBox/msg';
 import Footer from './component/Footer';
 import Header from './component/Header';
 import "./i18n"
+import Languageselector from './language-selector';
 
 const RootComponents = () =>{
   const location = useLocation();
@@ -18,6 +19,11 @@ const RootComponents = () =>{
       {!hideHeaderFooter && <Chatbot/>}
       {/* <Chatbot/> */}
       {!hideHeaderFooter && <Footer/>}
+      {!hideHeaderFooter && (
+        <div className="fixed bottom-5 left-5 z-50">
+          <Languageselector />
+        </div>
+      )}
     </>
   );
 };

@@ -73,9 +73,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-            © 2024 <a href="https://flowbite.com/" className="hover:underline">SolarPower™</a>. All Rights Reserved.
+        <div className='flex text-center justify-center sm:text-center m-auto'>
+          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center ">
+            © 2024 <a href="/main" className="hover:underline">SolarPower™</a>. All Rights Reserved.
           </span>
+          </div>
           <div className="flex mt-4 space-x-5 md:mt-0 sm:justify-center">
             {/* Social media icons */}
             <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
