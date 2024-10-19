@@ -71,9 +71,6 @@ const Chatbot = () => {
           },
         }
       );
-
-
-
       return res.data.choices[0].text.trim();
     } catch (error) {
       console.error("Error fetching AI response", error);
@@ -122,7 +119,7 @@ const Chatbot = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none"
+              className="flex-grow p-0 border border-gray-300 rounded-l-lg focus:outline-none"
               placeholder="Ask about solar power..."
             />
             <button
