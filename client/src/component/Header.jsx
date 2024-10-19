@@ -3,7 +3,7 @@ import { useState } from 'react'; // Import useState
 import Logo from '../Images/Solar.png'
 
 const navigation = [
-  { name: 'About', href: '/about' },
+  { name: 'About', href: '#' },
   { name: 'Dashboard', href: '#' },
   { name: 'Team', href: '/team' },
   { name: 'Feedback', href: '/feedback' },
