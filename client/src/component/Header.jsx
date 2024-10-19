@@ -2,6 +2,7 @@ import { Disclosure, Menu } from '@headlessui/react'
 import { useState } from 'react'; // Import useState
 import Logo from '../Images/Solar.png'
 
+
 const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Dashboard', href: '#' },
@@ -15,7 +16,7 @@ function classNames(...classes) {
 
 export default function Header() {
   const [current, setCurrent] = useState(navigation[0].name); // Initialize state with the first navigation item
-
+   
   const handleLinkClick = (name) => {
     setCurrent(name); // Update current state when a link is clicked
   }
@@ -56,7 +57,6 @@ export default function Header() {
               ))}
             </div>
           </div>
-
           {/* Profile dropdown on the right */}
           <div className="flex items-center justify-end">
             <Menu as="div" className="relative ml-3">

@@ -5,6 +5,7 @@ import App from './App';
 import Chatbot from './MessageBox/msg';
 import Footer from './component/Footer';
 import Header from './component/Header';
+import "./i18n"
 
 const RootComponents = () =>{
   const location = useLocation();
@@ -14,7 +15,8 @@ const RootComponents = () =>{
     <>
       {!hideHeaderFooter && <Header/>}
       <App/>
-      <Chatbot/>
+      {!hideHeaderFooter && <Chatbot/>}
+      {/* <Chatbot/> */}
       {!hideHeaderFooter && <Footer/>}
     </>
   );
