@@ -11,7 +11,7 @@ function About() {
         <br/>         
         <span>Solar Power Application</span> is an innovative online marketplace designed for book lovers and collectors. Our mission is to make it easy for users to buy and sell used books, and to give old books a new life. With <span>Solar Power Application</span>, you can find the books you've been looking for at a fraction of the cost, and sell your own books to other users.       
       </div>         
-      <div className="mt-5 flex flex-row justify-center  items-center">         
+      <div className="mt-5 flex mr-4 justify-center  items-center">         
         <NavLink to="/Terms-And-Condition" className="about_options">           
           <p className="text-center">Terms & Condition</p>         
         </NavLink>         
