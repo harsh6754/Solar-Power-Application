@@ -42,7 +42,7 @@
 #aboutOptions{
     column-gap: 20px;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     margin-right: 10%;
     margin-top: 28px;
     user-select: none;
@@ -142,4 +142,9 @@
     }
 }
 
-
+@media (max-width: 640px) {
+    .about_options {
+      margin-bottom: 1rem; /* Add spacing for mobile */
+    }
+  }
+  
