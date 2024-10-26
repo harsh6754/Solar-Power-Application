@@ -6,7 +6,7 @@ function PrivacyPolicy() {
   return (
     <section className="bookWebPage bg-[#252232] text-white font-ubuntu w-full h-screen p-5 ">
       <h1 className="gradient_head">
-        <NavLink to="/main">
+        <NavLink to="/about">
           <span style={{ fontSize: "20px" }}>&#8592;</span>&nbsp; Privacy Policy
         </NavLink>
       </h1>
