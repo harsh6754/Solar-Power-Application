@@ -34,4 +34,3 @@ app.use('/admin',adminRouter);
 app.use('/user',userRouter);
 app.use("/auth", authRouter);
 app.use("/listing",listingRouter);
-app.use('/api', ticketRoutes);
