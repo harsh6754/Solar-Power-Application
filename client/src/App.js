@@ -17,6 +17,7 @@ import Terms from './FooterPages/Terms';
 import Team from './HaderPages/Team';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import FeedbackForm from './HaderPages/Feedback';
 
 
 
@@ -30,6 +31,7 @@ function App() {
            <Route path="/main" element={<Homepage/>}/>
            <Route path='/login' element={<Login/>}/>
            <Route path ='/profile' element={<Profile/>}/>
+           <Route path ='/feedback' element ={<FeedbackForm/>}/>
 
 
            {/* Footer Page Routing */}
