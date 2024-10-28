@@ -14,10 +14,10 @@ import Licensing from './FooterPages/Licensing';
 import PrivacyPolicy from './FooterPages/PrivacyPolicy';
 import Terms from './FooterPages/Terms';
 
-import FeedbackForm from './HaderPages/FeedbackForm';
 import Team from './HaderPages/Team';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+
 
 
 function App() {
@@ -43,7 +43,6 @@ function App() {
            <Route path ='/Terms-And-Condition' element={<Terms/>}/>
 
            {/* Header Page Routing */}
-           <Route path='/feedback' element={<FeedbackForm/>}/>
            <Route path='/team' element={<Team/>}/>
 
        </Routes>
