@@ -1,9 +1,9 @@
 import { Disclosure, Menu } from '@headlessui/react'
-import { useState } from 'react'; // Import useState
+import { useState } from 'react'
 import Logo from '../Images/Solar.png'
 
 const navigation = [
-  { name: 'About', href: '#' },
+  { name: 'About', href: '/about' },
   { name: 'Dashboard', href: '#' },
   { name: 'Team', href: '/team' },
   { name: 'Feedback', href: '/feedback' },
@@ -14,10 +14,10 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-  const [current, setCurrent] = useState(navigation[0].name); // Initialize state with the first navigation item
-   
+  const [current, setCurrent] = useState(navigation[0].name)
+
   const handleLinkClick = (name) => {
-    setCurrent(name); // Update current state when a link is clicked
+    setCurrent(name) // Update current state when a link is clicked
   }
 
   return (
@@ -25,18 +25,12 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo aligned to the left */}
-          <div 
-          className=" flex justify-start items-center flex-shrink-0 cursor-pointer">
-            <img
-              alt="Your Company"
-              src={Logo}
-              className="h-20 w-auto"
-            />
+          <div className="flex justify-start items-center flex-shrink-0 cursor-pointer">
+            <img alt="Your Company" src={Logo} className="h-20 w-auto" />
             <span className="ml-0 text-2xl font-semibold text-white">
               Solar-Power
             </span>
           </div>
-
 
           {/* Centered navigation links */}
           <div className="hidden sm:ml-6 sm:block flex-1">
@@ -45,10 +39,12 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => handleLinkClick(item.name)} // Set current on click
-                  aria-current={item.name === current ? 'page' : undefined} // Check if the current item matches
+                  onClick={() => handleLinkClick(item.name)}
+                  aria-current={item.name === current ? 'page' : undefined}
                   className={classNames(
-                    item.name === current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.name === current
+                      ? 'bg-gray-900 text-white' // Active background
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'rounded-md px-3 py-2 text-sm font-medium'
                   )}
                 >
@@ -57,6 +53,7 @@ export default function Header() {
               ))}
             </div>
           </div>
+
           {/* Profile dropdown on the right */}
           <div className="flex items-center justify-end">
             <Menu as="div" className="relative ml-3">
@@ -75,7 +72,10 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="/login"
-                      className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                      className={classNames(
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700'
+                      )}
                     >
                       Your Profile
                     </a>
@@ -85,7 +85,10 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="#"
-                      className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                      className={classNames(
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700'
+                      )}
                     >
                       Settings
                     </a>
@@ -95,7 +98,10 @@ export default function Header() {
                   {({ active }) => (
                     <a
                       href="/login"
-                      className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                      className={classNames(
+                        active ? 'bg-gray-100' : '',
+                        'block px-4 py-2 text-sm text-gray-700'
+                      )}
                     >
                       Login
                     </a>
@@ -103,8 +109,6 @@ export default function Header() {
                 </Menu.Item>
               </Menu.Items>
             </Menu>
-          </div>
-          <div>
           </div>
         </div>
       </div>
@@ -117,10 +121,12 @@ export default function Header() {
               key={item.name}
               as="a"
               href={item.href}
-              onClick={() => handleLinkClick(item.name)} // Set current on click
-              aria-current={item.name === current ? 'page' : undefined} // Check if the current item matches
+              onClick={() => handleLinkClick(item.name)}
+              aria-current={item.name === current ? 'page' : undefined}
               className={classNames(
-                item.name === current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                item.name === current
+                  ? 'bg-gray-900 text-white' // Active background for mobile
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium'
               )}
             >
