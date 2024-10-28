@@ -12,14 +12,21 @@ import {
 } from '../controllers/admin.controller.js'; // Use .js extension with ES modules
 
 import express from 'express';
+import rateLimit from 'express-rate-limit';
 
 const router = express.Router();
 
+// Configure rate limiter: maximum of 100 requests per 15 minutes
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+});
+
 // Routes for Admin Operations
-router.get('/admins', getAllAdmin); // Get all admins
-router.get('/admins/:id', getAdmin); // Get a single admin by ID
-router.put('/admins/:id', updateAdmin); // Update admin by ID
-router.delete('/admins/:id', deleteAdmin); // Delete admin by ID
+router.get('/admins', limiter, getAllAdmin); // Get all admins
+router.get('/admins/:id', limiter, getAdmin); // Get a single admin by ID
+router.put('/admins/:id', limiter, updateAdmin); // Update admin by ID
+router.delete('/admins/:id', limiter, deleteAdmin); // Delete admin by ID
 
 // Route for Exporting Data to Excel
 router.get('/admins/exportExcel', exportToExcel);
