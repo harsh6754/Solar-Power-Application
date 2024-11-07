@@ -1,6 +1,7 @@
 //User Data Listinig Pannel 
 
 import listingData from "../models/listining.model.js";
+import Joi from 'joi';
 
 export const createList = async (req, res, next) => {
     try {
@@ -97,7 +98,25 @@ export const createList = async (req, res, next) => {
   export const updateListing = async (req, res, next) => {
     try {
       const { id } = req.params;
-      const update = req.body;
+      
+      // Define schema for update object
+      const schema = Joi.object({
+        plantCapacity: Joi.number().optional(),
+        email: Joi.string().email().optional(),
+        siteLocation: Joi.string().optional(),
+        siteAddress: Joi.string().optional(),
+        siteContactNumber: Joi.string().optional(),
+        msedclConsumerNumber: Joi.string().optional(),
+        // Add other fields as necessary
+      });
+      
+      // Validate update object
+      const { error, value } = schema.validate(req.body);
+      if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+      }
+      
+      const update = value;
       const options = { new: true };
       const updatedListing = await listingData.findByIdAndUpdate(
         id,
